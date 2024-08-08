@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0">
     <channel>
-        <title>Insert Solution Name Blog</title>
+        <title>IBM OpenPages with watsonx Blog</title>
         <link>https://ibm-client-engineering.github.io/solution-openpages-wx/flight-logs</link>
-        <description>Insert Solution Name Blog</description>
+        <description>IBM OpenPages with watsonx Blog</description>
         <lastBuildDate>Fri, 01 Mar 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
