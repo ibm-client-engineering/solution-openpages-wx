@@ -14,7 +14,7 @@ async function createconfig() {
       mermaid: true,
     },
     themes: ["@docusaurus/theme-mermaid", "@docusaurus/theme-live-codeblock"],
-    title: "Insert Solution Name",
+    title: "IBM OpenPages with watsonx",
     tagline: "Build Faster. Together.",
     favicon: "img/favicon.ico",
 
