@@ -3,52 +3,35 @@ title: Integrations
 description: Integrations
 custom_edit_url: null
 ---
+
 # OpenPages Integrations
 
 # Setup OpenPages with Watsonx Assistant
+
 ## Prerequisite
+
 - A OpenPages instance
 - A Watsonx Assistant instance
 - A Watsonx.ai project
 - A Watson Discovery instance
 
-## Develop Watsonx Assistant Actions
-### In Watsonx Assistant
-1. Import actions json to Watsonx Assistant 
-    - Import actions json to Watsonx Assistant. Please follow this guide to [Uploading or downloading all actions](https://cloud.ibm.com/docs/watson-assistant?topic=watson-assistant-upload-download-actions)
-    - You will see the following after you've imported the json file to you Watsonx Assistant
-    ![WxA-Actions](../../assets/screenshots/watsonx-assistant-actions-import.png)
-2. Build Custom Extensions to enable Watson Discovery and Watsonx.ai: 
-    - Watson Discovery: Please follow [this guide](https://ibm-client-engineering.github.io/solution-watsonx-assistant/Create/Prepare/solution-prepare-core#step-by-step-instructions) to build Watson Discovery project, collection, and integrate through custom extensions in Watsonx Assistant.
-    - Watsonx.ai: Please follow [this guide](https://ibm-client-engineering.github.io/solution-watsonx-assistant/Create/Prepare/solution-prepare-core#22-create-watsonx-custom-extension-) to build Watsonx.ai custom extensions in Watsonx Assistant.
-3. Once complete, you should see the status of actions showing green checkmarks, similar to screenshot below.
-    ![WxA-Actions-Green-Status](../../assets/screenshots/watsonx-assistant-action-status-green.png)
-
 ## Integrate Watsonx Assistant with OpenPages
+
 ### In Watsonx Assistant
+
 1. Navigate to Watsonx Assistant's **Integrations** Tab
-    - ![WxA-Integrations](../../assets/screenshots/WxA-Integrations.png)
+   - ![WxA-Integrations](../../assets/screenshots/WxA-Integrations.png)
 1. Find "Web chat", click on "Open" -> choose environment, and "Confirm"
 1. Navigate to Embed Tab and Copy the content in the text box. (This is an example)
-    - ![WxA-Webchat-embed](../../assets/screenshots/WxA-Webchat-embed.png)
+   - ![WxA-Webchat-embed](../../assets/screenshots/WxA-Webchat-embed.png)
 
 ### In OpenPages
+
 1. Click Administration menu > Integrations > Watson Assistant.
 1. Click Import Configuration (The button left of New +)
 1. Paste the code snippet into the Configuration string box, and then click Import.
 1. All good! You could now start interacting with your Watsonx Assistant in OpenPages.
 
-### Embed links to Navigate OpenPages
-Exmaple of **Create a Risk** action in Watsonx Assistant
-1. Set examples of how users may prompt to create a Risk, such as `Create Risk`, `how can I create a risk`, etc.    
-    ![](../../assets/screenshots/watsonx-assistant-create-a-risk.png)
-1. In the conversation steps, paste the following text in the "Assistant says" field. Modify the right OpenPages link to make sure it's routing the user to the right OpenPages instance.
-    - `You can create a Risk from  <a href="http://useast.services.cloud.techzone.ibm.com:XXXXX/openpages/app/jspview/react/grc/creation-view/SOXRisk?isSystemFile=false" target="blank">here</a>`
-    - Example as screenshot below
-    ![](../../assets/screenshots/watsonx-assistant-create-a-risk-2.png)
-1. Other "Assistant says" examples:
-    - Show risks: `You can view your Risks from <a href="http://useast.services.cloud.techzone.ibm.com:XXXXX/openpages/app/jspview/react/grc/grid/SOXRisk" target="blank">here</a>`
-    - Create a control: `You can create a Control from  <a href="http://na4.services.cloud.techzone.ibm.com:XXXXX/openpages/app/jspview/react/grc/creation-view/SOXControl?isSystemFile=false">here</a>`
-    - Show Controls: `You can find a list of your controls from <a href="http://na4.services.cloud.techzone.ibm.com:XXXXX/openpages/app/jspview/react/grc/grid/SOXControl" target="blank">here</a>`
 ## References
+
 - [Configuring the integration between an assistant and OpenPages](https://www.ibm.com/docs/en/openpages/9.0.0?topic=assistant-configuring-integration-between-openpages)

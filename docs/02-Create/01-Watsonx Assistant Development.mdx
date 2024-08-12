@@ -6,6 +6,16 @@ custom_edit_url: null
 
 # Watsonx Assistant Development
 
-Details regarding the technical solution. What did you do and how you did it.
+## Develop Watsonx Assistant Actions
 
-i.e. Deployment, installment, upgrade, configuration, automation.
+### In Watsonx Assistant
+
+1. Import actions json to Watsonx Assistant
+   - Import actions json to Watsonx Assistant. Please follow this guide to [Uploading or downloading all actions](https://cloud.ibm.com/docs/watson-assistant?topic=watson-assistant-upload-download-actions)
+   - You will see the following after you've imported the json file to you Watsonx Assistant
+     ![WxA-Actions](../../assets/screenshots/watsonx-assistant-actions-import.png)
+2. Build Custom Extensions to enable Watson Discovery and Watsonx.ai:
+   - Watson Discovery: Please follow [this guide](https://ibm-client-engineering.github.io/solution-watsonx-assistant/Create/Prepare/solution-prepare-core#step-by-step-instructions) to build Watson Discovery project, collection, and integrate through custom extensions in Watsonx Assistant.
+   - Watsonx.ai: Please follow [this guide](https://ibm-client-engineering.github.io/solution-watsonx-assistant/Create/Prepare/solution-prepare-core#22-create-watsonx-custom-extension-) to build Watsonx.ai custom extensions in Watsonx Assistant.
+3. Once complete, you should see the status of actions showing green checkmarks, similar to screenshot below.
+   ![WxA-Actions-Green-Status](../../assets/screenshots/watsonx-assistant-action-status-green.png)
