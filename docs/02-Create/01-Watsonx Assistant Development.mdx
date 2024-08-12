@@ -1,21 +1,71 @@
 ---
-title: Watsonx Assistant Development
-description: Watsonx Assistant Development
+title: watsonx Assistant Development
+description: watsonx Assistant Development
 custom_edit_url: null
 ---
 
-# Watsonx Assistant Development
+# watsonx Assistant Development
 
-## Develop Watsonx Assistant Actions
+## Setup watsonx and Integrate with Watson Discovery
 
-### In Watsonx Assistant
+---
 
-1. Import actions json to Watsonx Assistant
-   - Import actions json to Watsonx Assistant. Please follow this guide to [Uploading or downloading all actions](https://cloud.ibm.com/docs/watson-assistant?topic=watson-assistant-upload-download-actions)
+### Create Watson Discovery Custom Extension
+
+1. If you do not have a watsonx Assistant yet, create a new assistant and then complete the following.
+2. Once created, in your assistant, navigate to the Integrations page.
+3. Click "Build custom extensions" then click Next, then input the extension name "Watson Discovery" and click Next.
+4. Download the Watson Discovery OpenAPI json file: [watson-discovery-query-openapi.json](https://github.com/watson-developer-cloud/assistant-toolkit/blob/master/integrations/extensions/starter-kits/watson-discovery/watson-discovery-query-openapi.json) and import this file to WA. This file contains the configuration to enable access to watson discovery from watsonx assistant.
+5. Click Next, then click Finish.
+6. In the lower-right corner of the Watson Disovery extension, click Add then click Next.
+7. In Authentication page, in the Authentication type dropdown, select "Basic auth"
+   1. For _username_ enter "apikey".
+   2. For _password_ create and copy a new API key from [API key](https://cloud.ibm.com/iam/apikeys).
+   3. For _discovery_url_, within IBM Cloud, go to Resource List, then navigat to the Watson Discovery Instance, go to Manage, then go to Credentials, next click on URL.
+   4. Paste the URL into discovery_url and remove "https://" from the beginning of the string
+8. Click Next, then click Finish, then click Close.
+
+---
+
+### Create watsonx.ai Custom Extension
+
+1. In your assistant, navigate to the Integrations page, click on "Build custom extension" then click Next and input the extension name "watsonx" then click Next.
+   download json file: [watsonx-openapi.json](https://github.com/watson-developer-cloud/assistant-toolkit/blob/master/integrations/extensions/starter-kits/language-model-watsonx/watsonx-openapi.json) and import the file to WA.
+2. Click Next, then click Finish.
+3. In the lower-right corner of the watsonx extension, click Add, then click Add again, then click Next.
+4. In the Authentication page, navigate to the Authentication type dropdown, then select "OAuth 2.0" within the options.
+5. For the apikey, create and copy a new API key from [API key](https://cloud.ibm.com/iam/apikeys).
+6. Click Next, then click Finish, then click Close.
+
+---
+
+### Configure Watson Assistant action to Integrate watsonx Search using Watson Discovery
+
+1. Download [discovery-watsonx-actions.json](https://github.com/watson-developer-cloud/assistant-toolkit/blob/master/integrations/extensions/starter-kits/language-model-conversational-search/discovery-watsonx-actions.json). This json files contain three actions that link the Watson Discovery extension and the watsonx.ai extension to work together.
+2. Within watsonx Assistant, navigate to the Actions page, then click the Global Settings icon on the upper-right corner.
+3. Navigate to the Upload/Download tab, then upload the JSON file discovery-watsonx-actions.json that you downloaded earlier onto the tab or click to select a file from your local system. Click Upload, and then click Upload and Replace. Now the 3 actions are imported into this Watsonx Assistant.
+4. Within the Actions page, navigate to the "Actions / Variables / Created by you" and set the **discovery_project_id** and **watsonx_project_id** session variables.
+   - **Where to get the credentials**
+     - **discovery_project_id:** within Watson Discovery: Navigate to the upper left hamburger icon -> Integrate and deploy -> API Information. Copy Project ID and navigate back to watsonx assistant to paste it in the Initial value box of this Session variable.
+     - watsonx_project_id:
+       - Go to WatsonX Platform
+       - If you do not have an project, create a new project.
+       - **Check Services & integrations:** Within the project, navigate to Manage -> Services & Integrations. If no services is associated, click "Associate Service" -> select "Watson Machine Learning" -> click "Associate".
+       - Once you confirm WML is associated, Navigate to Manage -> General -> Details -> Project ID. Copy Project ID and navigate back to watsonx assistant to paste it in the Initial value of this Session variable.
+
+---
+
+### Configure watsonx Assistant
+
+1. Import an actions JSON file to Watsonx Assistant
+   - On the Actions page of watsonx Assistant, click on Global Settings.
+   - On the Upload/Download tab, click the Upload button and upload the file that was given to you by your IBM teachers.
    - You will see the following after you've imported the json file to you Watsonx Assistant
      ![WxA-Actions](../../assets/screenshots/watsonx-assistant-actions-import.png)
-2. Build Custom Extensions to enable Watson Discovery and Watsonx.ai:
-   - Watson Discovery: Please follow [this guide](https://ibm-client-engineering.github.io/solution-watsonx-assistant/Create/Prepare/solution-prepare-core#step-by-step-instructions) to build Watson Discovery project, collection, and integrate through custom extensions in Watsonx Assistant.
-   - Watsonx.ai: Please follow [this guide](https://ibm-client-engineering.github.io/solution-watsonx-assistant/Create/Prepare/solution-prepare-core#22-create-watsonx-custom-extension-) to build Watsonx.ai custom extensions in Watsonx Assistant.
-3. Once complete, you should see the status of actions showing green checkmarks, similar to screenshot below.
-   ![WxA-Actions-Green-Status](../../assets/screenshots/watsonx-assistant-action-status-green.png)
+
+---
+
+### Final Check
+
+Once the **watsonx Assistant development** is fully complete, you should see the status of actions showing green checkmarks, similar to screenshot below.
+![WxA-Actions-Green-Status](../../assets/screenshots/watsonx-assistant-action-status-green.png)
