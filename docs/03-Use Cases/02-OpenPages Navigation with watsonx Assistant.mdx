@@ -6,4 +6,19 @@ custom_edit_url: null
 
 # OpenPages Navigation with watsonx Assistant
 
-1. **Watsonx Assistant in OpenPages​: Navigate OpenPages using embedded links through Watsonx Assistant**​. Guiding a user to the right OpenPages view when users ask *"Create an Issue"*, *"Show me risks"*, *"Create a new risk"*
+1. **Watsonx Assistant in OpenPages​: Navigate OpenPages using embedded links through Watsonx Assistant**​. Guiding a user to the right OpenPages view when users ask _"Create an Issue"_, _"Show me risks"_, _"Create a new risk"_
+
+### Embed links to Navigate OpenPages
+
+Exmaple of **Create a Risk** action in Watsonx Assistant
+
+1. Set examples of how users may prompt to create a Risk, such as `Create Risk`, `how can I create a risk`, etc.  
+   ![](../../assets/screenshots/watsonx-assistant-create-a-risk.png)
+1. In the conversation steps, paste the following text in the "Assistant says" field. Modify the right OpenPages link to make sure it's routing the user to the right OpenPages instance.
+   - `You can create a Risk from  <a href="http://useast.services.cloud.techzone.ibm.com:XXXXX/openpages/app/jspview/react/grc/creation-view/SOXRisk?isSystemFile=false" target="blank">here</a>`
+   - Example as screenshot below
+     ![](../../assets/screenshots/watsonx-assistant-create-a-risk-2.png)
+1. Other "Assistant says" examples:
+   - Show risks: `You can view your Risks from <a href="http://useast.services.cloud.techzone.ibm.com:XXXXX/openpages/app/jspview/react/grc/grid/SOXRisk" target="blank">here</a>`
+   - Create a control: `You can create a Control from  <a href="http://na4.services.cloud.techzone.ibm.com:XXXXX/openpages/app/jspview/react/grc/creation-view/SOXControl?isSystemFile=false">here</a>`
+   - Show Controls: `You can find a list of your controls from <a href="http://na4.services.cloud.techzone.ibm.com:XXXXX/openpages/app/jspview/react/grc/grid/SOXControl" target="blank">here</a>`
