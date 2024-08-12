@@ -6,6 +6,8 @@ custom_edit_url: null
 
 # Setup watsonx Environment
 
+---
+
 ## Prerequisites
 
 - Access to any Watson Assistant instance on a Lite, Plus Trial, Plus, or Enterprise plan
@@ -13,20 +15,26 @@ custom_edit_url: null
 - Access to WatsonX platform
 - Access to an instance of Watson Machine Learning
 
+---
+
 ## Step-by-step Instructions
 
-0. Create a new Watson Assistant
-1. Setup Watson Discovery
-   1. Under new projects, input a detailed project name. Select the option "Conversation Search" then click Next.
-   2. Input Collection name.
-   3. In the Upload data section, select the _here_ hyperlink at the end of "Need to connect to a data source? Click here"
-      1. **OPTION 1 - Web Crawl**
-         1. Click "Web Crawl" then click Next
-         2. Input starting URL then click "Add" to add and repeat for all the domains.
-         3. Navigate to the upper-left hamburger icon, then go to Manage Collections, then New collections.
-         4. Select a data source.
-         5. If utilizing a webcrawl, input the url links to "Starting URLs" and click "Add" then Finish.
-      2. **OPTION 2 - Cloud Object Storage**
-         - To access files such as PDFs, CSVs, or HTML through Cloud Object Storage (COS) requires **COS Configuration** and setting up Watson Discovery accordingly.
-2. Setup watsonx
-   1. In the watsonx platform, create a new Project. Navigate to the Manage tab, and please keep note of the _Project ID_.
+### 0. Create a new Watson Assistant
+
+### 1. Setup Watson Discovery
+
+1.  Under new projects, input a detailed project name. Select the option "Conversation Search" then click Next.
+2.  Input Collection name.
+3.  In the Upload data section, select the _here_ hyperlink at the end of "Need to connect to a data source? Click here"
+    1. **OPTION 1 - Web Crawl**
+       1. Click "Web Crawl" then click Next
+       2. Input starting URL then click "Add" to add and repeat for all the domains.
+       3. Navigate to the upper-left hamburger icon, then go to Manage Collections, then New collections.
+       4. Select a data source.
+       5. If utilizing a webcrawl, input the url links to "Starting URLs" and click "Add" then Finish.
+    2. **OPTION 2 - Cloud Object Storage**
+       - To access files such as PDFs, CSVs, or HTML through Cloud Object Storage (COS) requires **COS Configuration** and setting up Watson Discovery accordingly.
+
+### 2. Setup watsonx
+
+1.  In the watsonx platform, create a new Project. Navigate to the Manage tab, and please keep note of the _Project ID_.
