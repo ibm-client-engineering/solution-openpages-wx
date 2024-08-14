@@ -5,3 +5,26 @@ custom_edit_url: null
 ---
 
 # Manage User Access in OpenPages
+
+Ensure **role-based access control** to limit content and data exposure, along with creating rules to restrict users to specific modules. For this example, Justin will be in the Business Analyst role and Emma will be in the Admin Developer role. Therefore, Justin should not have access to the Admin User Guide.
+
+---
+
+## Upload the OpenPages Administrator Guide to Watson Discovery
+
+1. Make sure that you have the OpenPages Administrator Guide downloaded locally.
+2. Under new projects, input a detailed project name. Select the option **"Conversational Search"** then click Next.
+   ![](../../assets/screenshots/upload-WD.png)
+3. Input a collection name.
+4. Upload the file which will serve as the knowledge base. It should look like the following once you have uploaded -
+   ![](../../assets/screenshots/WD-loading.png)
+
+---
+
+## Create a role assignment
+
+1. In the watsonx Assistant platform, in the Actions tab, under Variables, under Created by you, create 3 new variables:
+   - username: Create a new variable called username as type "Free Text" with no initial value. Then, click Save.
+   - password: Create a new variable called password as type "Free Text" with no initial value. Then, click Save.
+   - role: Create a new variable called role as type "Free Text" with no initial value. Then, click Save.
+2. Next, navigate to the Actions tab, under All items, under Created by you,
