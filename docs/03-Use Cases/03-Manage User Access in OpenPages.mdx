@@ -33,13 +33,11 @@ Ensure **role-based access control** to limit content and data exposure, along w
    2. **Step 2:** Type in "Please enter your **password.**" under Assistant says, then set the output to _free text_. Also, set the variable value _username_ to Action step variable / Step 1. It should look similar to the following image:
       ![](../../assets/screenshots/RA-step2.png)
    3. **Step 3:** Set the variable value _password_ to Action step variable / Step 2.
-   4. **Step 4:** Type in "Welcome _username_, how can I assist you today?" under Assistant says. Set the conditions to, If all of this is true: username matches _justin_ and password matches _12345_ and set the variable values to loggedIn To True. It should look similar to the following image:
-      ![](../../assets/screenshots/RA-step4.png)
-   5. **Step 5:** Type in "Welcome _username_, how can I assist you today?" under Assistant says. Set the conditions to, If all of this is true: username matches _emma_ and password matches _12345_ and set the variable values to loggedIn To True. It should look similar to the following image:
-      ![](../../assets/screenshots/RA-step5.png)
-   6. **Step 6:** Type in "Your username or password is incorrect, please **try again.**" under Assistant says, and set the And then section to Re-ask previous step(s) and set to Steps 1-5. Set the conditions to the following image:
-      ![](../../assets/screenshots/RA-step6.png)
-   7. **Step 7:** Set the And then section to Go to subaction: goes to action "Role assignment" so that they can re-login.
+   4. **Step 4 and 5:** Type in "Welcome _username_, how can I assist you today?" under Assistant says. Using your preferred way of User Authentication, set the conditions as such and then set loggedIn == True.
+      ![](../../assets/screenshots/RA-step4and5.png)
+   5. **Step 6:** Type in "Your username or password is incorrect, please **try again.**" under Assistant says, and set the And then section to Re-ask previous step(s) and set to Steps 1-5. Set the conditions to match your preferred authentication approach once again.
+      ![](../../assets/screenshots/RA-step6-new.png)
+   6. **Step 7:** Set the And then section to Go to subaction: goes to action "Role assignment" so that they can re-login.
 4. Now, when the Assistant first prompts the user, it should ask them to login. **Test out your new action sequence in Preview!**
 
 ---
@@ -47,12 +45,5 @@ Ensure **role-based access control** to limit content and data exposure, along w
 ## Role Assignment
 
 1. Next, navigate to the Actions tab, under All items, under Created by you, create a New action called "Role Assignment" from scratch.
-2. Add a New step, and for Step 1, click on Is taken "with conditions" then please complete the following:
-   - Under conditions, set If All of this is true: username matches justin and loggedIn == true
-   - Under Variable values, please set the variable value role to Analyst
-     ![](../../assets/screenshots/justin-role.png)
-3. Add another step, and for Step 2, click on Is taken "with conditions" then please complete the following:
-   - Under conditions, set If All of this is true: username matches emma and loggedIn == true
-   - Under Variable values, please set the variable value role to Admin
-     ![](../../assets/screenshots/emma-role.png)
-4. Be sure to save this action, then close out of this window. Preview your new action in the bottom-right Preview chat.
+2. Add your method of Authentication.
+3. Be sure to save this action, then close out of this window. Preview your new action in the bottom-right Preview chat.
