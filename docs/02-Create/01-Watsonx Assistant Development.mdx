@@ -62,17 +62,17 @@ custom_edit_url: null
 2. On the Upload/Download tab, click the Upload button and upload the file that was given to you by your IBM instructors.
 3. You will see the following after you've imported the json file to you Watsonx Assistant
    ![WxA-Actions](../../assets/screenshots/watsonx-assistant-actions-import.png)
-4. Click "Invoke watsonx generation API", and click step 1.
-   ![](../../assets/screenshots/watsonx_assistant_watsonxai_action.png)
-5. Click "Edit extension" to setup watsonx.ai custom extension.
-6. From the Extension options, select "watsonx.ai". From Operation options, select "Generation".
-7. For "Parameters"
-   1. set **version** to `watsonx_api_version` variable
-   2. set **input** to `model_input` variable
-   3. set **model_id** to `model_id` variable
-   4. set **project_id** to `watsonx_project_id` variable
-      ![](../../assets/screenshots/watsonx_assistant_watsonxai_custom_extension_setup.png)
-8. Click "Apply", and click "Save".
+4. Configure the "Invoke watsonx generation API" action
+   1. On Step 1, click "Edit extension" to setup watsonx.ai custom extension.
+      ![](../../assets/screenshots/watsonx_assistant_watsonxai_action.png)
+   2. For the Extension options, select "watsonx.ai" and for the Operation options, select "Generation"
+   3. For "Parameters"
+      1. set **version** to `watsonx_api_version` variable
+      2. set **input** to `model_input` variable
+      3. set **model_id** to `model_id` variable
+      4. set **project_id** to `watsonx_project_id` variable
+         ![](../../assets/screenshots/watsonx_assistant_watsonxai_custom_extension_setup.png)
+   4. Click "Apply", and click "Save".
 
 ##### Update session variables:
 
