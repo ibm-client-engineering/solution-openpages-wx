@@ -21,62 +21,67 @@ custom_edit_url: null
 
 ### Create Watson Discovery Custom Extension
 
-1. If you do not have a watsonx Assistant yet, create an assistant and then complete the following steps.
-2. Once created, in your assistant, navigate to the Integrations page.
-3. Click "Build custom extensions" then click Next, then input the extension name "Watson Discovery" and click Next.
-4. Download the Watson Discovery OpenAPI json file: [watson-discovery-query-openapi.json](https://github.com/watson-developer-cloud/assistant-toolkit/blob/master/integrations/extensions/starter-kits/watson-discovery/watson-discovery-query-openapi.json) and import this file to WA. This file contains the configuration to enable access to watson discovery from watsonx assistant.
-5. Click Next, then click Finish.
-6. In the lower-right corner of the Watson Disovery extension, click Add then click Next.
-7. In Authentication page, in the Authentication type dropdown, select "Basic auth"
-   1. For the _username_, enter "apikey".
-   2. For the _password_, create and copy a new API key from [API key](https://cloud.ibm.com/iam/apikeys).
-   3. For the _discovery_url_, within IBM Cloud, go to Resource List, then navigat to the Watson Discovery Instance, go to Manage, then go to Credentials, next click on URL.
-   4. Paste the URL into discovery_url and remove "https://" from the beginning of the string
-8. Click Next, then click Finish, then click Close.
+1. If you do not have an Watsonx Assistant, create new bot and fill in all required information.
+1. Once created, in your assistant, navigate to "Integrations" page.
+1. Click "Build custom extensions" -> click "Next" -> Input Extension name `Watson Discovery` -> click "Next"
+1. Download the Watson Discovery OpenAPI json file: [watson-discovery-query-openapi.json](https://github.com/watson-developer-cloud/assistant-toolkit/blob/master/integrations/extensions/starter-kits/watson-discovery/watson-discovery-query-openapi.json) and import file to WA. This file contains the configuration to enable accessing to watson discovery from watsonx assistant.
+1. click "Next" -> click "Finish"
+1. Lower Right corner of the Watson Disovery extension, click "Add" -> click "Add" -> click "Next"
+   ![](../../assets/screenshots/Add_custom_extensions.png)
+1. In Authentication page, in the Authentication type dropdown, select "Basic auth"
+   1. For Username enter `apikey`
+   1. For password and discovery_url, within IBM Cloud -> resource list -> click on you Watson Discovery Instance
+   1. You'd see the following view.
+      1. Copy **API Key** and paste it in _Password_ field.
+      1. Copy **URL** and paste it in _discovery_url_ and remove `https://` from the beginning of the string
+         ![](../../assets/screenshots/watson_discovery_credentials.png)
+1. Click "Next", click "Finish", click "Close"
 
 ---
 
 ### Create watsonx.ai Custom Extension
 
-1. In your assistant, navigate to the Integrations page, click on "Build custom extension" then click Next and input the extension name "watsonx" then click Next.
-   download json file: [watsonx-openapi.json](https://github.com/watson-developer-cloud/assistant-toolkit/blob/master/integrations/extensions/starter-kits/language-model-watsonx/watsonx-openapi.json) and import the file to WA.
-2. Click Next, then click Finish.
-3. In the lower-right corner of the watsonx extension, click Add, then click Add again, then click Next.
-4. In the Authentication page, navigate to the Authentication type dropdown, then select "OAuth 2.0" within the options.
-5. For the apikey, create and copy a new API key from [API key](https://cloud.ibm.com/iam/apikeys).
-6. Click Next, then click Finish, then click Close.
+1.  In your assistant, navigate to Integrations page, click "Build custom extension" -> click "Next" -> Input Extension name `watsonx.ai` -> click "Next" .
+1.  download json file: [watsonx-openapi.json](https://github.com/watson-developer-cloud/assistant-toolkit/blob/master/integrations/extensions/starter-kits/language-model-watsonx/watsonx-openapi.json) and import file to WA
+1.  click "Next" -> click "Finish"
+1.  Lower Right corner of the watsonx extension, click "Add" -> click "Add" -> click "Next"
+1.  In Authentication page, in the Authentication type dropdown, select "OAuth 2.0"
+    1. For Apikey, create and copy a new API key from [API key](https://cloud.ibm.com/iam/apikeys)
+    1. For Server variables, select the region that matches where your environment is configured in.
+1.  Click "Next", click "Finish", click "Close"
+1.  Your Extensions section will appear as following screenshot once both Watson Discovery and watsonx.ai custom extensions were configured.  
+    ![](../../assets/screenshots/custom_extension_completed_view.png)
 
 ---
 
-### Integrate watsonx Search with Watson Discovery in Watson Assistant actions
+### Configure watsonx Assistant action to integrate watsonx.ai and Watson Discovery for conversational search
 
-1. Download [discovery-watsonx-actions.json](https://github.com/watson-developer-cloud/assistant-toolkit/blob/master/integrations/extensions/starter-kits/language-model-conversational-search/discovery-watsonx-actions.json). This json files contain three actions that link the Watson Discovery extension and the watsonx.ai extension to work together.
-2. Within watsonx Assistant, navigate to the Actions page, then click the Global Settings icon on the upper-right corner.
-3. Navigate to the Upload/Download tab, then upload the JSON file discovery-watsonx-actions.json that you downloaded earlier onto the tab or click to select a file from your local system. Click Upload, and then click **Upload and Replace**. Now the 3 actions are imported into this Watsonx Assistant.
-4. Within the Actions page, navigate to the "Actions / Variables / Created by you" section and set the **discovery_project_id** and **watsonx_project_id** session variables to new values.
-   - **Where to get the credentials**
-     - **discovery_project_id:** within Watson Discovery: Go to the project that you created, then navigate to the upper-left hamburger icon, click on the Integrate and deploy tab and then go to API Information. Copy the Project ID and navigate back to watsonx assistant to paste it in the Initial value box of this Session variable.
-     - **watsonx_project_id**:
-       - Go to the watsonX Platform.
-       - If you do not have an project, create a new project.
-       - **Check Services & integrations:** Within the project, navigate to Manage, then to Services & Integrations. If no services is associated, click Associate Service, select Watson Machine Learning, click Associate.
-       - Once you confirm WML is associated, Navigate to Manage, then General, then Details, and copy the Project ID. Navigate back to watsonx assistant to paste it in the Initial value of this Session variable.
-
----
-
-### Configure watsonx Assistant with Additional Actions
+##### Upload Actions:
 
 1. On the Actions page of watsonx Assistant, click on Global Settings.
 2. On the Upload/Download tab, click the Upload button and upload the file that was given to you by your IBM instructors.
 3. You will see the following after you've imported the json file to you Watsonx Assistant
    ![WxA-Actions](../../assets/screenshots/watsonx-assistant-actions-import.png)
-4. Configure **search** action
-5. Configure the **watsonx generation API action**
-   1. In the **watsonx generation API action**, for Step 1 under "Use an extension" click on _watsonx.ai Custom Extension_ then set each parameter variable to itself, like the following:
-      ![WxA-Actions](../../assets/screenshots/params-wa.png)
-   2. For Step 2, check to make sure if the call to watsonx.ai was successful by setting the **conditions** and **variable values** to the following image:
-      ![WxA-Actions](../../assets/screenshots/step2-wa.png)
-   3. For Step 3, set the variable **model_response** to null in the case that the call to watsonx.ai was not successful.
+4. Click "Invoke watsonx generation API", and click step 1.
+   ![](../../assets/screenshots/watsonx_assistant_watsonxai_action.png)
+5. Click "Edit extension" to setup watsonx.ai custom extension.
+6. From the Extension options, select "watsonx.ai". From Operation options, select "Generation".
+7. For "Parameters" 1. set **version** to `watsonx_api_version` variable 1. set **input** to `model_input` variable 1. set **model_id** to `model_id` variable 1. set **project_id** to `watsonx_project_id` variable
+   ![](../../assets/screenshots/watsonx_assistant_watsonxai_custom_extension_setup.png)
+8. Click "Apply", and click "Save".
+
+##### Update session variables:
+
+1. within the Actions page, navigate to "Actions / Variables / Created by you".
+   ![](../../assets/screenshots/watsonx_assistant_variables.png)
+1. Set `discovery_project_id` and `watsonx_project_id` session variable
+   :::info
+   **Where to get credentials**
+   - **discovery_project_id**: within Watson Discovery: Upper left Hamburger icon -> Integrate and deploy -> API Information. Copy Project ID and navigate back to watsonx assistant to paste it in the `Initial value` box of this Session variable.
+   - **watsonx_project_id**: - Go to [watsonx Platform](https://dataplatform.cloud.ibm.com/wx/home?context=wx) - If you do not have an project, create a new project. - **Check Services & integrations**: Within the project, navigate to Manage -> Services & Integrations. If no services is associated, click "Associate Service" -> select "Watson Machine Learning" -> click "Associate". - Once you confirm WML is associated, Navigate to Manage -> General -> Details -> Project ID. Copy Project ID and navigate back to watsonx assistant to paste it in the `Initial value` of this Session variable.
+     :::
+1. Once you've finished configuring the variables, click "Preview" on the lower right corner, and type in questions to test the Conversational Search in your assistant!
+   ![](../../assets/screenshots/watsonx_assistant_test_preview.png)
 
 ---
 
