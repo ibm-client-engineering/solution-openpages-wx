@@ -6,7 +6,7 @@ custom_edit_url: null
 
 # Conversational Search in OpenPages
 
-Build a **personalized assistant that can converse with users in natural language with document search capability (RAG).** Incorporate Internal Audit methodologies and OpenPages user guide knowledge into OpenPages via watsonx Assistant. Oftentimes businesses struggle with overburdening their call centers and/or training their chatbots with applicable information, this solution tackles both issues.
+Build a **personalized assistant that can converse with users in natural language with document search capability (RAG).** Incorporate Internal Audit methodologies and OpenPages user guide knowledge into OpenPages via watsonx Assistant. Oftentimes, businesses struggle with overburdening their call centers and/or training their chatbots with applicable information, this solution tackles both issues.
 
 1. It answers questions more effectively, leading to less calls to your customer service agents.
 2. Instead of manually programming FAQ, allow your chatbot to answer _any_ question using the power of generative AI.
