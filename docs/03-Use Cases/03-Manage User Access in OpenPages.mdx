@@ -47,3 +47,30 @@ Ensure **role-based access control** to limit content and data exposure, along w
 1. Next, navigate to the Actions tab, under All items, under Created by you, create a New action called "Role Assignment" from scratch.
 2. Add your method of Authentication.
 3. Be sure to save this action, then close out of this window. Preview your new action in the bottom-right Preview chat.
+
+---
+
+## Ensure Search Action Queries the Admin User Guide
+
+1. On the watsonx Assistant platform navigate to the **Search** action, on **Step 5**, create a new condition `If All of this is true: role matches Admin` and ensure that you are using the Watson Discovery Custom Extension.
+   - The condition should look like the following image:
+   - The extension setup should have the following parameters:
+     - `project_id To discovery_project_id`
+     - `version To discovery_date_version`
+     - `count To 3`
+     - `return To ["title", "metadata.source.url"]`
+     - `passages.fields To ["text"]`
+     - `passages.enabled To true`
+     - `passages.characters To 800`
+     - `passages.find_answers To true`
+     - `table_results.enabled To false`
+     - `natural_langauge_query To query_text`
+     - `passages.per_document To True`
+     - `passages.max_answers_per_passage To 1`
+     - `collections_ids` To _the **Collection ID** of your Admin User Guide in Watson Discovery_ as `["<collection_id>"]`
+       :::info
+       **Where to get Collection ID**
+       - **collection_ids**: In Watson Discovery, navigate to your collection, then copy the URL of your browser once you click on your collection. Copy the code between "collections" and "activity" because this is your Collection ID.
+         :::
+   - Be sure to click Apply, then Save.
+2. The next
