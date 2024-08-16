@@ -70,8 +70,13 @@ custom_edit_url: null
 2. On the Upload/Download tab, click the Upload button and upload the file that was given to you by your IBM instructors.
 3. You will see the following after you've imported the json file to you Watsonx Assistant
    ![WxA-Actions](../../assets/screenshots/watsonx-assistant-actions-import.png)
-4. Configure search action
-5. Configure watsonx generation API
+4. Configure **search** action
+5. Configure the **watsonx generation API action**
+   1. In the **watsonx generation API action**, for Step 1 under "Use an extension" click on _watsonx.ai Custom Extension_ then set each parameter variable to itself, like the following:
+      ![WxA-Actions](../../assets/screenshots/params-wa.png)
+   2. For Step 2, check to make sure if the call to watsonx.ai was successful by setting the **conditions** and **variable values** to the following image:
+      ![WxA-Actions](../../assets/screenshots/step2-wa.png)
+   3. For Step 3, set the variable **model_response** to null in the case that the call to watsonx.ai was not successful.
 
 ---
 
