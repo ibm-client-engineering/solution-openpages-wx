@@ -14,7 +14,7 @@ Build a **personalized assistant that can converse with users in natural languag
 
 ---
 
-## Implementation
+## Conversational Search
 
 Given what you already built in the **Prepare** and **Create** sections, your conversational assistant should already be up and running. At this point, your assistant should be referencing the documents that you uploaded into Watson Discovery and calling watsonx.ai when necessary for its conversational search capability. Some example prompts that you can use in order to test out its capabilities are the following -
 
@@ -25,3 +25,31 @@ Given what you already built in the **Prepare** and **Create** sections, your co
 ![](../../assets/screenshots/convo-search.png)
 
 For all of these questions, it is clear that watsonx Assistant, Watson Discovery, and watsonx.ai provide a seamless integrated experience for users to get clear answers to their queries. **Please play around with this feature and try to ask it questions that specifically pertain to your use case at hand.**
+
+---
+# OpenPages Navigation with watsonx Assistant
+
+Enable effective **OpenPages navigation with Embedded Links** in watsonx Assistant. This ensures that users are guided to the correct OpenPages location when users ask a question regarding a specific UI. This example will demonstrate the **Create a Risk action** that will lead a user to the Risk page in OpenPages. **Feel free to duplicate this action for your other embedded link areas.**
+
+---
+
+## Integrate Embedded links
+
+1. Create a New action from scratch in watsonx Assistant under the Actions tab
+2. Set examples of how users may prompt to create a Risk, such as "Create Risk" or "how can I create a risk" like the following image -
+   ![](../../assets/screenshots/watsonx-assistant-create-a-risk.png)
+3. In the conversation steps, paste the following text in the "Assistant says" field. **Be sure to modify the right OpenPages link to make sure it routes the user to the right OpenPages instance.**
+   - `You can create a Risk from  <a href="http://useast.services.cloud.techzone.ibm.com:XXXXX/openpages/app/jspview/react/grc/creation-view/SOXRisk?isSystemFile=false" target="blank">here</a>`
+     ![](../../assets/screenshots/watsonx-assistant-create-a-risk-2.png)
+4. The integration is complete! Test out your action in Preview.
+
+---
+
+### If you would like to integrate additional embedded links, here are some other "Assistant says" examples:
+
+- **Show risks:**
+  `You can view your Risks from <a href="http://useast.services.cloud.techzone.ibm.com:XXXXX/openpages/app/jspview/react/grc/grid/SOXRisk" target="blank">here</a>`
+- **Create a control:**
+  `You can create a Control from  <a href="http://na4.services.cloud.techzone.ibm.com:XXXXX/openpages/app/jspview/react/grc/creation-view/SOXControl?isSystemFile=false">here</a>`
+- **Show Controls:**
+  `You can find a list of your controls from <a href="http://na4.services.cloud.techzone.ibm.com:XXXXX/openpages/app/jspview/react/grc/grid/SOXControl" target="blank">here</a>`
