@@ -30,7 +30,7 @@ custom_edit_url: null
 3. Select **"Display only"** since we only want to display output from running the model
 4. For Access Parameters:
    1. Authentication URL: paste in the following `https://iam.cloud.ibm.com/identity/token`
-   2. API Key: [Create a IAM Key](https://cloud.ibm.com/iam/apikeys) in the cloud account where the deployment lives 
+   2. API Key: [Create a IAM Key](https://cloud.ibm.com/iam/apikeys) in the cloud account where the deployment lives
    3. Base Deployment URL: paste in the following `https://us-south.ml.cloud.ibm.com/ml/v4`
    4. Deployment ID: this should be the **Deployment ID** copied from the jupyter notebook
    5. Space ID: _Deployment Space ID_
@@ -62,7 +62,7 @@ custom_edit_url: null
   - What `predictions.values[0][0].$substringAfter("What: ").$substringBefore("When:")`
   - Where `predictions.values[0][0].$substringAfter("Where: ").$substringBefore("Why:")`
   - When `predictions.values[0][0].$substringAfter("When: ").$substringBefore("Where:")`
-  - Why `predictions.values[0][0].$substringAfter("Why: ")`
+  - Why `predictions.values[0][0].$substringAfter("Why: ").$substringBefore("\n")`
     ![](../../assets/screenshots/openpages-model-config-outputs-5w.png)
     ![](../../assets/screenshots/openpages-model-config-outputs-5w-2.png)
 
