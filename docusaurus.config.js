@@ -14,7 +14,7 @@ async function createconfig() {
       mermaid: true,
     },
     themes: ["@docusaurus/theme-mermaid", "@docusaurus/theme-live-codeblock"],
-    title: "IBM OpenPages with watsonx",
+    title: "OpenPages Internal Audit AI Assistant",
     tagline: "Build Faster. Together.",
     favicon: "img/favicon.ico",
 
@@ -130,7 +130,7 @@ async function createconfig() {
           },
         },
         navbar: {
-          title: "| IBM OpenPages with watsonx",
+          title: "| OpenPages Internal Audit AI Assistant",
           logo: {
             alt: "IBM Client Engineering Logo",
             src: "img/logo.svg",
